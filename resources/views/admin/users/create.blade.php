@@ -22,8 +22,8 @@
         </div>
 
         <div class="form-froup">
-            {!! Form::label('image', 'Image') !!}
-            {!! Form::file('image', ['class' => 'form-control']) !!}
+            {!! Form::label('photo_id', 'Image') !!}
+            {!! Form::file('photo_id', ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
