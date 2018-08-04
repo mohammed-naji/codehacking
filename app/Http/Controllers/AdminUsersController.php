@@ -144,6 +144,12 @@ class AdminUsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $path = $_SERVER['DOCUMENT_ROOT'] . '/codehacking' . $user->photo->file;
+
+
+        unlink( $path );
+        $user->delete();
+        return redirect('/admin/users');
     }
 }

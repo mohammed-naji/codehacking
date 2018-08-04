@@ -30,8 +30,10 @@
                     <td>{{ $user->created_at->diffForHumans() }}</td>
                     {{--  <td>{{ $user->updated_at->diffForHumans() }}</td>  --}}
                     <td>
-                        <a class="btn btn-info btn-sm" href="{{route('users.edit', $user->id)}}"><i class="fa fa-edit"></i></a>
-                        <a class="btn btn-danger btn-sm" href="{{route('users.edit', $user->id)}}"><i class="fa fa-times"></i></a>
+                        {!! Form::open(['method' => 'DELETE','action' => ['AdminUsersController@destroy', $user->id]]) !!}
+                            <a class="btn btn-info btn-sm" href="{{route('users.edit', $user->id)}}"><i class="fa fa-edit"></i></a>
+                            <button type="submit" onclick="return confirm('are you sure?!')" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
+                        {!! Form::close() !!}
                     </td>
                 </tr>
             @endforeach
